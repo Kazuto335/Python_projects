@@ -35,6 +35,7 @@ operations = {
     "*" : mul,
     "/" : div
 }
+# Here i use OS module to create a clear screen fun. 
 import os
 def screen_clear():
    # for mac and linux(here, os.name is 'posix')
