@@ -1,32 +1,32 @@
-# a = [0,0,0,0,0,0,0]
-# a[0]=input("enter Fruit Name :")
+a = [0,0,0,0,0,0,0]
+a[0]=input("enter Fruit Name :")
 
-# a[1]=input("enter Fruit Name :")
+a[1]=input("enter Fruit Name :")
 
-# a[2]=input("enter Fruit Name :")
+a[2]=input("enter Fruit Name :")
 
-# a[3]=input("enter Fruit Name :")
+a[3]=input("enter Fruit Name :")
 
-# a[4]=input("enter Fruit Name :")
+a[4]=input("enter Fruit Name :")
 
-# a[5]=input("enter Fruit Name :")
+a[5]=input("enter Fruit Name :")
 
-# a[6]=input("enter Fruit Name :")
+a[6]=input("enter Fruit Name :")
 
 
-# print(a)
+print(a)
 
-# m1 = int(input("enter Marks of student 1:-\t"))
-# m2 = int(input("enter Marks of student 2:-\t"))
-# m3 = int(input("enter Marks of student 3:-\t"))
-# m4 = int(input("enter Marks of student 4:-\t"))
-# m5 = int(input("enter Marks of student 5:-\t"))
-# m6 = int(input("enter Marks of student 6:-\t"))
-# m7 = int(input("enter Marks of student 7:-\t"))
+m1 = int(input("enter Marks of student 1:-\t"))
+m2 = int(input("enter Marks of student 2:-\t"))
+m3 = int(input("enter Marks of student 3:-\t"))
+m4 = int(input("enter Marks of student 4:-\t"))
+m5 = int(input("enter Marks of student 5:-\t"))
+m6 = int(input("enter Marks of student 6:-\t"))
+m7 = int(input("enter Marks of student 7:-\t"))
 
-# m = [m1,m2,m3,m4,m5,m6,m7]
-# m.sort()
-# print(m)
+m = [m1,m2,m3,m4,m5,m6,m7]
+m.sort()
+print(m)
 
 
 
