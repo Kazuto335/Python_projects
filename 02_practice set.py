@@ -15,15 +15,15 @@ print(type(a))
 
 
 
-# a=input("enter first no: ")
-# b=input("enter second no: ")
-# a=int(a)
-# b=int(b)
-# avg=(a+b)/2
-# print("the value of average a&b is:", avg)
+a=input("enter first no: ")
+b=input("enter second no: ")
+a=int(a)
+b=int(b)
+avg=(a+b)/2
+print("the value of average a&b is:", avg)
 
-# a=int(input("Enter First no. "))
-# b=int(input("enter second no: "))
+a=int(input("Enter First no. "))
+b=int(input("enter second no: "))
 
 a=int(input("enter first no: "))
 b=a*a
