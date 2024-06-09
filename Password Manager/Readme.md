@@ -1,4 +1,4 @@
 # PASSWORD MANAGER
-Please install the following libraries before run the code
-ttkbootstrap
-pyperclip
+<p>Please install the following libraries before run the code</p>
+<li>ttkbootstrap
+<li>pyperclip
