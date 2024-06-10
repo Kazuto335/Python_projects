@@ -1,14 +1,15 @@
-import random as rd
-from ttkbootstrap import *
-from tkinter import *
-from tkinter import messagebox
 from random import *
+from tkinter import messagebox
+import json
 import pyperclip
+from ttkbootstrap import *
+
 
 # ------- GENERATE PASSWORD -------
-#Password Generator Project
+# Password Generator Project
 
 def generate_password():
+    # noinspection PyBroadException
     try:
         password_entry.delete(0, END)
     except:
@@ -42,25 +43,52 @@ def generate_password():
     password_entry.insert(0, password)
     pyperclip.copy(password)
 
+
 # ------- SAVE PASSWORD ------
 def save():
+
+    new_data = {
+        website_entry.get(): {
+            'email': email_entry.get(),
+            'password': password_entry.get()
+        }
+    }
+
     if len(website_entry.get()) == 0 or len(password_entry.get()) == 0 or len(email_entry.get()) == 0:
         messagebox.showinfo('Oops..', "Please Fill out all the details.")
     else:
-        is_ok = messagebox.askokcancel('Confirmation',
-                                       message=f'Confirm the details.'
-                                               f'\nWebsite: {website_entry.get()}'
-                                               f'\nEmail: {email_entry.get()}'
-                                               f'\nPassword: {password_entry.get()}')
-        if is_ok:
-            with open('savePassword.txt', 'a') as file:
-                file.write(f'{website_entry.get()} | {email_entry.get()} | {password_entry.get()}\n')
-                website_entry.delete(0, END)
-                # email_entry.delete(0, END)
-                password_entry.delete(0, END)
+        # is_ok = messagebox.askokcancel('Confirmation',
+        #                                message=f'Confirm the details.'
+        #                                        f'\nWebsite: {website_entry.get()}'
+        #                                        f'\nEmail: {email_entry.get()}'
+        #                                        f'\nPassword: {password_entry.get()}')
+        # if is_ok:
+        try:
+            with open('savePassword.json', 'r') as file:
+                # Read old JSON
+                data = json.load(file)
 
+        except FileNotFoundError:
+            # Create file if it doesn't exist
+            with open('savePassword.json', 'w') as file:
+                json.dump(new_data, file, indent=4)
+                messagebox.showinfo('Done', 'Data Added Successfully')
+
+        else:
+            # Update old data with new data
+            data.update(new_data)
+
+            with open('savePassword.json', 'w') as file:
+                # Saving Updated data
+                json.dump(data, file, indent=4)
+                messagebox.showinfo('Done', 'Data Added Successfully')
+
+        finally:
+            website_entry.delete(0, END)
+            password_entry.delete(0, END)
 
 # ----- GUI -------
+
 
 screen = Window()
 screen.title('Password Manager')
