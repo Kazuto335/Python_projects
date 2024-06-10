@@ -5,6 +5,23 @@ import pyperclip
 from ttkbootstrap import *
 
 
+# ---- SEARCH PASSWORD ----
+def search():
+    website = website_entry.get()
+    if website == "":
+        messagebox.showinfo('Oops..', "Please Fill out all the details.")
+    else:
+        try:
+            with open('savePassword.json') as file:
+                data = json.load(file)
+            credentials = data[website]
+            messagebox.showinfo(title=website, message=f'Email: {credentials['email']}\nPassword: {credentials['password']}')
+        except KeyError as _:
+            print(f'No data found for this site \n{_}')
+        except FileNotFoundError:
+            print('No data Files Found')
+
+
 # ------- GENERATE PASSWORD -------
 # Password Generator Project
 
@@ -46,7 +63,6 @@ def generate_password():
 
 # ------- SAVE PASSWORD ------
 def save():
-
     new_data = {
         website_entry.get(): {
             'email': email_entry.get(),
@@ -87,6 +103,7 @@ def save():
             website_entry.delete(0, END)
             password_entry.delete(0, END)
 
+
 # ----- GUI -------
 
 
@@ -109,17 +126,19 @@ password_label = Label(screen, text='Password:')
 password_label.grid(row=3, column=0, pady=3)
 
 # -------> Entry
-website_entry = Entry(screen, width=50)
-website_entry.grid(row=1, column=1, columnspan=2, pady=3)
+website_entry = Entry(screen, width=30)
+website_entry.grid(row=1, column=1, pady=3)
 email_entry = Entry(screen, width=50)
 email_entry.grid(row=2, column=1, columnspan=2, pady=3)
 email_entry.insert(0, 'ranahimanshu335@gmail.com')
-password_entry = Entry(screen, width=32)
+password_entry = Entry(screen, width=30)
 password_entry.grid(row=3, column=1, pady=3)
 
 # --------> Buttons
+search = Button(screen, text='Search', command=search)
+search.grid(row=1, column=2, pady=3, ipadx=30)
 generate_password = Button(screen, text='Generate Password', command=generate_password)
 generate_password.grid(row=3, column=2, pady=3)
-add = Button(screen, text='Add', width=43, command=save)
+add = Button(screen, text='Add', width=50, command=save)
 add.grid(row=4, column=1, columnspan=2, pady=3)
 screen.mainloop()
