@@ -24,10 +24,14 @@ try:
     file = open('random_file.txt')
     a_dictionary = {'key': 'value'}
     print(a_dictionary['key'])
+
+# ---- Exception For FileNotFoundError ----
 except FileNotFoundError as error_message:
     print(f'{error_message} was not found so we create the new file.')
     file = open('random_file.txt', 'w')
     file.write('Created file Successful')
+
+# ---- Exception For KeyError ----
 except KeyError as error_message:
     print(f'The key {error_message} does not exist.')
 else:
