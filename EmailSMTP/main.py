@@ -18,7 +18,7 @@ if datetime.weekday == 0:
     # print(message)
 
     SENDER = 'ranahimanshu335@gmail.com'
-    PASSWORD = 'qzjhnbypiwamgtua'
+    PASSWORD = '1234567890123456' # Add your password here (must be 16 digits)
     RECEIVER = 'kalatomu@gmail.com'
 
     conn = smtplib.SMTP("smtp.gmail.com")
