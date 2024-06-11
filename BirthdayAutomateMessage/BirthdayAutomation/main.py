@@ -5,7 +5,7 @@ from random import *
 from smtplib import *
 
 SENDER = 'ranahimanshu335@gmail.com'
-PASSWORD = 'qzjhnbypiwamgtua'
+PASSOWRD = '1234567890123456' # your password here.
 LIST_OF_LETTERS = ('letter_1.txt', 'letter_2.txt', 'letter_3.txt')
 
 ##################### Extra Hard Starting Project ######################
