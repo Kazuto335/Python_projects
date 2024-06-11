@@ -36,7 +36,7 @@ if current_day == 11 or current_month == 6:
 import smtplib
 
 SENDER = 'ranahimanshu335@gmail.com'
-PASSOWRD = 'qzjhnbypiwamgtua'
+PASSOWRD = '1234567890123456' # your password here.
 RECEIVER = 'kalatomu@gmail.com'
 
 with smtplib.SMTP('smtp.gmail.com') as conn:
